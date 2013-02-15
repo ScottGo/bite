@@ -1,4 +1,7 @@
 Bite::Application.routes.draw do
+  resources :visits
+
+
   resources :dishes
 
 
