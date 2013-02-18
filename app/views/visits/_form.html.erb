@@ -16,13 +16,18 @@
     <%= f.text_area :note %>
   </div>
   <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.collection_select(:user_id, User.all, :id, :name) %>
+  </div>
+  <div class="field">
     <%= f.label :restaurant_id %><br />
     <%= f.collection_select(:restaurant_id, Restaurant.all, :id, :name) %>
     <%#= f.number_field :restaurant_id %>
   </div>
   <div class="field">
     <%= f.label :dish_id %><br />
-    <%= f.number_field :dish_id %>
+    <%= f.collection_select(:dish_id, Dish.all, :id, :name) %>
+    <%#= f.number_field :dish_id %>
   </div>
   <div class="field">
     <%= f.label :rating %><br />

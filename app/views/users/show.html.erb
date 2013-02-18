@@ -2,23 +2,18 @@
 
 <p>
   <b>Name:</b>
-  <%= @restaurant.name %>
+  <%= @user.name %>
 </p>
 
 <p>
   <b>Zip:</b>
-  <%= @restaurant.zip %>
-</p>
-
-<p>
-  <b>Average Rating:</b>
-  <%= @restaurant.average_rating %>
+  <%= @user.zip %>
 </p>
 
 <table border=1>
   <tr>
     <th>Note</th>
-    <th>User</th>
+    <th>Restaurant</th>
     <th>Dish</th>
     <th>Rating</th>
     <th></th>
@@ -26,10 +21,10 @@
     <th></th>
   </tr>
 
-<% @restaurant.visits.each do |visit| %>
+<% @user.visits.each do |visit| %>
   <tr>
     <td><%= visit.note %></td>
-    <td><%= visit.user.name %></td>
+    <td><%= visit.restaurant.name %></td>
     <td><%= visit.dish.name %></td>
     <td><%= visit.rating %></td>
     <td><%= link_to 'Show', visit %></td>
@@ -38,5 +33,6 @@
   </tr>
 <% end %>
 </table>
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -1,8 +1,9 @@
 <h1>Listing visits</h1>
 
-<table>
+<table border=1>
   <tr>
     <th>Note</th>
+    <th>User</th>
     <th>Restaurant</th>
     <th>Dish</th>
     <th>Rating</th>
@@ -14,8 +15,9 @@
 <% @visits.each do |visit| %>
   <tr>
     <td><%= visit.note %></td>
-    <td><%= visit.restaurant_id %></td>
-    <td><%= visit.dish_id %></td>
+    <td><%= visit.user.name %></td>
+    <td><%= visit.restaurant.name %></td>
+    <td><%= visit.dish.name %></td>
     <td><%= visit.rating %></td>
     <td><%= link_to 'Show', visit %></td>
     <td><%= link_to 'Edit', edit_visit_path(visit) %></td>
